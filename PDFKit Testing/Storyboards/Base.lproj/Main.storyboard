@@ -15,18 +15,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uxw-78-xuz" customClass="PDFView">
-                                <rect key="frame" x="87" y="277" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Qs-1O-cqG" customClass="PDFThumbnailView">
-                                <rect key="frame" x="110" y="450" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="rPz-GJ-xwn">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S1Q-64-bAR">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uxw-78-xuz" customClass="PDFView">
+                                        <rect key="frame" x="0.0" y="39" width="414" height="654"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Qs-1O-cqG" customClass="PDFThumbnailView">
+                                        <rect key="frame" x="0.0" y="698" width="414" height="120"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="120" id="j1W-u0-3hU"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="PIC-ob-bBR" firstAttribute="bottom" secondItem="rPz-GJ-xwn" secondAttribute="bottom" id="0xG-8y-Jqf"/>
+                            <constraint firstItem="rPz-GJ-xwn" firstAttribute="leading" secondItem="PIC-ob-bBR" secondAttribute="leading" id="8p5-D8-awG"/>
+                            <constraint firstItem="PIC-ob-bBR" firstAttribute="trailing" secondItem="rPz-GJ-xwn" secondAttribute="trailing" id="QG7-wS-unB"/>
+                            <constraint firstItem="rPz-GJ-xwn" firstAttribute="top" secondItem="PIC-ob-bBR" secondAttribute="top" id="zmP-Mu-sdP"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="PIC-ob-bBR"/>
                     </view>
                     <connections>
