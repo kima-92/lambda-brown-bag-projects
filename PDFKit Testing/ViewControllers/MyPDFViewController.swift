@@ -11,6 +11,10 @@ import PDFKit
 
 class MyPDFViewController: UIViewController {
 
+    @IBOutlet weak var pdfView: PDFView!
+    
+    @IBOutlet weak var pdfThumbnailView: PDFThumbnailView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
