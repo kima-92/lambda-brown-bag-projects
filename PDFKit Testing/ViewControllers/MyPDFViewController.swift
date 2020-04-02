@@ -28,6 +28,7 @@ class MyPDFViewController: UIViewController {
     // MARK: - ViewDidAppear
     override func viewDidAppear(_ animated: Bool) {
         
+        highlightPhrase()
     }
     
     // MARK: - LoadPDF
@@ -53,6 +54,42 @@ class MyPDFViewController: UIViewController {
         pdfThumbnailView.pdfView = pdfView
         pdfThumbnailView.layoutMode = .horizontal  // by default it's set to vertical
         pdfThumbnailView.thumbnailSize = CGSize(width: pdfThumbnailView.bounds.height * 0.5, height: pdfThumbnailView.bounds.height * 0.5)
+    }
+    
+    // MARK: - Highlight a Prase
+    private func highlightPhrase() {
+        
+        // 4 - Find prase
+        
+        // a - Conduct search for prase
+        let foundItems = pdfDoc?.findString("security", withOptions: .caseInsensitive)
+        print(foundItems)
+        
+        // b - Move to that items found, then set selection to item
+        guard let firstItem = foundItems?.first else {
+            print("did not get first item")
+            return
+        }
+        
+        pdfView.go(to: firstItem)
+        pdfView.setCurrentSelection(firstItem, animate: true)
+        // it will highlight as a normal seletion on the device
+        
+        // 5 - Create an annotation on item
+        
+        // a - Get the current page
+        guard let currentPage = pdfView.currentPage else {
+            print("did not get current page")
+            return
+        }
+        
+        // b - Create annotation
+        let annotationBounds = firstItem.bounds(for: currentPage)
+        
+        let annotation = PDFAnnotation(bounds: annotationBounds, forType: .highlight, withProperties: nil)
+        
+        // c - Add annotation to the cuurent page
+        currentPage.addAnnotation(annotation)
     }
     
 
