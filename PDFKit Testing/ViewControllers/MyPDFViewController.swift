@@ -50,7 +50,9 @@ class MyPDFViewController: UIViewController {
         pdfView.document = pdfDoc
         
         // 3 - Connect thumbnailView to the pdfView
-
+        pdfThumbnailView.pdfView = pdfView
+        pdfThumbnailView.layoutMode = .horizontal  // by default it's set to vertical
+        pdfThumbnailView.thumbnailSize = CGSize(width: pdfThumbnailView.bounds.height * 0.5, height: pdfThumbnailView.bounds.height * 0.5)
     }
     
 
