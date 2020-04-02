@@ -7,18 +7,50 @@
 //
 
 import UIKit
-import PDFKit
+import PDFKit  // Need to import PDFKit
 
 class MyPDFViewController: UIViewController {
-
-    @IBOutlet weak var pdfView: PDFView!
     
+    // MARK: - Properties
+    var pdfDoc: PDFDocument?
+    
+    // MARK: - Outlets
+    @IBOutlet weak var pdfView: PDFView!
     @IBOutlet weak var pdfThumbnailView: PDFThumbnailView!
     
+    // MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        loadPDF()
+    }
+    
+    // MARK: - ViewDidAppear
+    override func viewDidAppear(_ animated: Bool) {
+        
+    }
+    
+    // MARK: - LoadPDF
+    private func loadPDF() {
+        
+        // 1 - Set path for which to load a PDF
+        guard let pathURL = URL(string: "https://www.apple.com/privacy/docs/Location_Services_White_Paper_Nov_2019.pdf")
+            
+            else {
+            print("Failed to get pathURL ")
+            return
+        }
+        
+        // 2 - Load the PDF by creating a PDFDocument and then setting it to the pdfView's .document property
+        
+        // Create a document. You can set the document with data or a path to a URL
+        pdfDoc = PDFDocument(url: pathURL)
+        
+        // Set that doc to our view's document
+        pdfView.document = pdfDoc
+        
+        // 3 - Connect thumbnailView to the pdfView
 
-        // Do any additional setup after loading the view.
     }
     
 
@@ -31,5 +63,4 @@ class MyPDFViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }
