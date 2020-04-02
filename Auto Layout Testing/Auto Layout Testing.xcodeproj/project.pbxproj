@@ -12,6 +12,7 @@
 		FA4CF4CC243641790058E69C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA4CF4CA243641790058E69C /* Main.storyboard */; };
 		FA4CF4CE2436417C0058E69C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA4CF4CD2436417C0058E69C /* Assets.xcassets */; };
 		FA4CF4D12436417C0058E69C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA4CF4CF2436417C0058E69C /* LaunchScreen.storyboard */; };
+		FA4CF4DB243642350058E69C /* MyNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4CF4DA243642350058E69C /* MyNotes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		FA4CF4CD2436417C0058E69C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA4CF4D02436417C0058E69C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA4CF4D22436417C0058E69C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA4CF4DA243642350058E69C /* MyNotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNotes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 		FA4CF4D92436418A0058E69C /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FA4CF4DA243642350058E69C /* MyNotes.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -153,6 +156,7 @@
 			files = (
 				FA4CF4C5243641790058E69C /* AppDelegate.swift in Sources */,
 				FA4CF4C7243641790058E69C /* SceneDelegate.swift in Sources */,
+				FA4CF4DB243642350058E69C /* MyNotes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
