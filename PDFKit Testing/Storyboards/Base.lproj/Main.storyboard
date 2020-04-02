@@ -22,6 +22,9 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="searchTextFieldEdited:" destination="w5o-Mm-YTc" eventType="editingChanged" id="ZB1-zD-4CZ"/>
+                                        </connections>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uxw-78-xuz" customClass="PDFView">
                                         <rect key="frame" x="0.0" y="39" width="414" height="654"/>
@@ -49,6 +52,7 @@
                     <connections>
                         <outlet property="pdfThumbnailView" destination="9Qs-1O-cqG" id="msL-hu-F01"/>
                         <outlet property="pdfView" destination="uxw-78-xuz" id="rYc-kB-QMD"/>
+                        <outlet property="searchTextField" destination="S1Q-64-bAR" id="aWr-wn-myv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GDB-wG-btY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

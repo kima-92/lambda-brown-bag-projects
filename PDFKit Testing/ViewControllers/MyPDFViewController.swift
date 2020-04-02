@@ -14,9 +14,10 @@ class MyPDFViewController: UIViewController {
     // MARK: - Properties
     var pdfDoc: PDFDocument?
     
-    // MARK: - Outlets
+    // MARK: - IBOutlets
     @IBOutlet weak var pdfView: PDFView!
     @IBOutlet weak var pdfThumbnailView: PDFThumbnailView!
+    @IBOutlet weak var searchTextField: UITextField!
     
     // MARK: - ViewDidLoad
     override func viewDidLoad() {
@@ -29,6 +30,12 @@ class MyPDFViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         
         highlightPhrase()
+    }
+    
+    // MARK: - IBActions
+    @IBAction func searchTextFieldEdited(_ sender: UITextField) {
+        
+        searchForEnteredTerm()
     }
     
     // MARK: - LoadPDF
@@ -92,7 +99,23 @@ class MyPDFViewController: UIViewController {
         currentPage.addAnnotation(annotation)
     }
     
-
+    // MARK: - Search for a term
+    private func searchForEnteredTerm() {
+        
+        // a - Conduct search for prase
+        let foundItems = pdfDoc?.findString(searchTextField.text ?? "", withOptions: .caseInsensitive)
+        print(foundItems)
+        
+        // b - Move to that items found, then set selection to item
+        guard let firstItem = foundItems?.first else {
+            print("did not get first item")
+            return
+        }
+        
+        pdfView.go(to: firstItem)
+        pdfView.setCurrentSelection(firstItem, animate: true)
+    }
+    
     /*
     // MARK: - Navigation
 
