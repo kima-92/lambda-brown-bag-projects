@@ -64,6 +64,9 @@ class MyPDFViewController: UIViewController {
         
         // Scale PDF page to fit entire View
         pdfView.autoScales = true
+        
+        // Make the PDF pages scroll in horizontal mode
+        pdfView.displayDirection = .horizontal
     }
     
     // MARK: - Highlight a Prase
