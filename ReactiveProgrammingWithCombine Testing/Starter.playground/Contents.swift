@@ -19,3 +19,27 @@ example(of: "Just publisher and sink subscription") {
           receiveValue: { print("Received 2:", $0) })
     .store(in: &subscriptions)
 }
+
+var subscriptions = Set<AnyCancellable>()
+
+example(of: "Collection publisher, assign subscriber, & printing events") {
+    
+    class SomeObject {
+        
+        var value: String = "" {
+            didSet{
+                print("didSet", value)
+            }
+        }
+    }
+    
+    let object = SomeObject()
+    
+    ["Hello", "World"].publisher.print()
+        .assign(to: \.value, on: object)
+    .store(in: &subscriptions)
+}
+
+
+// Stoped video at 31:10.
+// TODO: Continue
